@@ -39,5 +39,7 @@
     <footer>
         <p>Hugo Perdigão &copy; 2024</p>
     </footer>
+
+    @stack('scripts')
 </body>
 </html>

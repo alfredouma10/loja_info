@@ -21,7 +21,7 @@
         @endisset
 
         <h1>Nome do Produto</h1>
-        <input id="name" name="name" type="text" placeholder="Nome do Produto" value="{{ old('name') !== null ? old('name') : (isset($produto) ? $produto->Name : '') }}">
+        <input id="name" name="name" type="text" placeholder="Nome do Produto" value="{{ old('name') !== null ? old('name'] : (isset($produto) ? $produto->Name : '') }}">
 
         <h1>Descrição</h1>
         <input id="desc" name="desc" type="text" placeholder="Descrição do Produto" value="{{ old('desc') !== null ? old('desc') : (isset($produto) ? $produto->Description : '') }}">
@@ -75,14 +75,20 @@
     @endif
 </div>
 
-@push("scripts")
+@push('scripts')
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const cloudName = "{{ env('CLOUDINARY_CLOUD_NAME') }}";
-    const uploadPreset = "lojainfo_preset";
+    const uploadPreset = 'lojainfo_preset';
 
-    const mywidget = cloudinary.createUploadWidget({
+    if (!cloudName || cloudName === '') {
+        console.error("ERRO CRÍTICO: O CLOUDINARY_CLOUD_NAME está vazio no .env!");
+        alert("Erro de configuração: Verifica se CLOUDINARY_CLOUD_NAME está definido no ficheiro .env");
+        return;
+    }
+
+    const myWidget = cloudinary.createUploadWidget({
         cloudName: cloudName,
         uploadPreset: uploadPreset,
         sources: ['local', 'url'],
@@ -90,22 +96,26 @@ document.addEventListener("DOMContentLoaded", function() {
         maxFiles: 1,
         cropping: false,
         showAdvancedOptions: false
-    }, (error, result) => {
+    }, function (error, result) {
         if (!error && result && result.event === "success") {
-            document.getElementById("img").value = result.info.secure_url;
+            document.getElementById('img').value = result.info.secure_url;
             let divPreview = document.getElementById('editProductImage');
             divPreview.querySelector('img').src = result.info.secure_url;
+        }
+
+        if (error) {
+            console.error("Erro no upload:", error);
+            alert("Erro ao fazer upload: " + error.message);
         }
     });
 
     const btn = document.getElementById('uploadWidgetBtn');
     if (btn) {
         btn.addEventListener('click', function() {
-            mywidget.open();
+            myWidget.open();
         });
     }
 });
 </script>
 @endpush
-
 @endsection

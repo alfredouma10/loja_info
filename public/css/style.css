@@ -1,0 +1,541 @@
+html {
+    --s: 82px; /* control the size */
+    --c1: #b2b2b2;
+    --c2: #ffffff;
+    --c3: #d9d9d9;
+
+    --_g: var(--c3) 0 120deg,#0000 0;
+    background:
+      conic-gradient(from -60deg at 50% calc(100%/3),var(--_g)),
+      conic-gradient(from 120deg at 50% calc(200%/3),var(--_g)),
+      conic-gradient(from  60deg at calc(200%/3),var(--c3) 60deg,var(--c2) 0 120deg,#0000 0),
+      conic-gradient(from 180deg at calc(100%/3),var(--c1) 60deg,var(--_g)),
+      linear-gradient(90deg,var(--c1)   calc(100%/6),var(--c2) 0 50%,
+                            var(--c1) 0 calc(500%/6),var(--c2) 0);
+    background-size: calc(1.732*var(--s)) var(--s);
+  }
+
+/* style */
+
+h1
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 5vh;
+    line-height: 8vh;
+}
+
+h2
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 4vh;
+    line-height: 6vh;
+}
+
+h3
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 3vh;
+    line-height: 8vh;
+}
+
+h3 .selected
+{
+    background-color: crimson;
+}
+
+p
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3vh;
+    line-height: 5vh;
+}
+
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8vh;
+    background-color: crimson;
+    box-shadow: 0 7px 8px black;
+}
+
+header h1
+,header h1 a
+{
+    color: whitesmoke;
+}
+
+#accessButton
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3vh;
+    line-height: 6vh;
+    position: fixed;
+    top: 1vh;
+    right: 1vw;
+    height: 6vh;
+    width: 10vw;
+    background-color: white;
+    color: crimson;
+    text-align: center;
+    cursor: pointer;
+}
+
+#userGreet
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    position: fixed;
+    top: 1vh;
+    right: 12vw;
+    height: 6vh;
+    width: 10vw;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    overflow: hidden;
+}
+#userGreet a
+{
+    color: white;
+}
+
+#userGreet p
+{
+    font-size: 2.5vh;
+    line-height: 6vh;
+}
+
+footer
+{
+    padding-right: 1vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5vh;
+    background-color: crimson;
+    color: white;
+    text-align: right;
+    box-shadow: 0 -7px 8px black;
+}
+
+#content
+{
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    right: 0;
+    bottom: 5vh;
+}
+
+/* index de produtos */
+
+#contentBox
+{
+    position: fixed;
+    top: 18vh;
+    left: 0;
+    right: 0;
+    bottom: 5vh;
+    overflow-y: auto;
+}
+
+.productBox
+{
+    background-color: white;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 25vw;
+    height: 65vh;
+    overflow: hidden;
+    display: inline-block;
+    box-shadow: 20px 20px 20px black;
+    text-align: center;
+}
+
+.productImage
+{
+    height: 32vh;
+}
+
+.productBox img
+{
+    margin-top: 1vh;
+    max-height: 30vh;
+    max-width: 24vw;
+}
+
+.productName
+{
+    width: 100%;
+    height: 6vh;
+    font-weight: bolder;
+    color: crimson;
+}
+
+.productCost
+{
+    width: 100%;
+    height: 10vh;
+}
+
+.productCost h2
+{
+    font-size: 8vh;
+    line-height: 10vh;
+}
+
+
+.productButtons
+{
+    margin-top: 1vh;
+    margin-left: 13vw;
+}
+
+.button
+{
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.5vh;
+    line-height: 6vh;
+    margin-top: 1vh;
+    display: inline-block;
+    background-color: crimson;
+    color: white;
+    width: 10vw;
+    height: 6vh;
+    cursor: pointer;
+}
+
+.deleteButton
+{
+    position: relative;
+    bottom: 62vh;
+    left: 10vw;
+    height: 6vh;
+    cursor: pointer;
+}
+
+.categoryItemBox .deleteButton
+{
+    position: relative;
+    bottom: 13vh;
+    left: 65vw;
+    height: 7vh;
+    width: 4vw;
+    cursor: pointer;
+}
+
+.categoryItemBox .editButton
+{
+    position: relative;
+    bottom: 6vh;
+    left: 61vw;
+    height: 7vh;
+    width: 4vw;
+    cursor: pointer;
+}
+
+.editButton
+{
+    position: relative;
+    bottom: 61vh;
+    left: 10vw;
+    height: 6vh;
+    cursor: pointer;
+}
+/* show de produtos */
+
+.deleteButton img
+,.deleteButton2 img
+,.editButton img
+,.editButton2 img
+{
+    height: 100%;
+}
+
+.deleteButton2
+{
+    position: fixed;
+    top: 20vh;
+    left: 80vw;
+    right: 16vw;
+    height: 8vh;
+    cursor: pointer;
+}
+
+.editButton2
+{
+    position: fixed;
+    top: 28vh;
+    left: 80vw;
+    right: 16vw;
+    height: 8vh;
+    cursor: pointer;
+}
+
+#detailsBox
+,#loginBox
+,#registerBox
+,#dashboardBox
+,#createProductBox
+,#categoryBox
+,#createCategoryBox
+,#salesBox
+{
+    position: fixed;
+    top: 18vh;
+    left: 15vw;
+    right: 15vw;
+    bottom: 10vh;
+    overflow-y: auto;
+    background-color: white;
+    display: inline-block;
+    box-shadow: 20px 20px 20px black;
+    text-align: center;
+}
+
+#dashboardBox a
+{
+    color: black;
+}
+
+#loginBox h1
+,#registerBox h1
+,#dashboardBox h1
+,#createProductBox h1
+,#categoryBox h1
+,#createCategoryBox h1
+,#salesBox h1
+{
+    color: crimson;
+}
+
+#loginBox input
+,#registerBox input
+,#dashboardBox input
+,#createProductBox input
+,#createProductBox select
+,#createCategoryBox input
+{
+    font-size: 3vh;
+    line-height: 5vh;
+    width: 50%;
+}
+
+.productDetailsImage
+{
+    position: fixed;
+    top: 19vh;
+    left: 16vw;
+    bottom: 11vh;
+    width: 34vw;
+}
+
+.productDetailsImage img
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.productDetailsName
+{
+    position: fixed;
+    top: 19vh;
+    left: 51vw;
+    right: 16vw;
+    height: 20vh;
+    font-weight: bolder;
+    color: crimson;
+    text-align: center;
+}
+
+.productDetailsName h2
+{
+    font-size: 6vh;
+    line-height: 10vh;
+}
+
+.productDetailsCategory
+{
+    position: fixed;
+    top: 30vh;
+    left: 51vw;
+    right: 16vw;
+    height: 30vhvw;
+    font-weight: bolder;
+    text-align: justify;
+    color: crimson;
+}
+
+.productDetailsCategory p
+{
+    font-weight: normal;
+    font-size: 2.5vh;
+    line-height: 5vh;
+}
+
+.productDetailsDescription
+{
+    position: fixed;
+    top: 35vh;
+    left: 51vw;
+    right: 16vw;
+    height: 30vh;
+    font-weight: bolder;
+    text-align: justify;
+}
+
+.productDetailsDescription p
+{
+    font-size: 3vh;
+    line-height: 5vh;
+}
+
+.productDetailsCost
+{
+    position: fixed;
+    top: 75vh;
+    left: 70vw;
+    right: 16vw;
+    height: 6vh;
+    font-weight: bolder;
+    text-align: justify;
+}
+
+.productDetailsCost h2
+{
+    font-size: 5vh;
+    line-height: 6vh;
+}
+
+.productDetailsButtons
+,.createProductButtons
+,.createCategoryButtons
+{
+    position: fixed;
+    top: 81vh;
+    left: 63vw;
+    right: 16vw;
+    height: 10vh;
+    font-weight: bolder;
+    text-align: justify;
+}
+
+.loginButtons
+,.registerButtons
+{
+    position: fixed;
+    top: 81vh;
+    left: 53vw;
+    right: 16vw;
+    height: 10vh;
+    font-weight: bolder;
+    text-align: justify;
+}
+
+.productDetailsButtons a
+,.loginButtons a
+,.registerButtons a
+,.createProductButtons a
+,.createCategoryButtons a
+{
+    color: white;
+}
+
+#editProductImage
+{
+    position: fixed;
+    top: 50vh;
+    left: 16vw;
+    width: 15vw;
+}
+
+#editProductImage img
+{
+    max-width: 100%;
+    max-height: 25vh;
+}
+
+#editProductImage p
+{
+    font-size: 2.5vh;
+}
+
+.categoryItemBox
+{
+    width: 100%;
+    height: 8vh;
+}
+
+.userSale
+{
+    width: 100%;
+    height: 10vh;
+    line-height: 10vh;
+    overflow: hidden;
+    text-align: left;
+}
+
+.userSale h1
+,.userSale h2
+,.userSale h3
+{
+    line-height: 10vh;
+}
+
+.userSaleDate
+{
+    width: 25%;
+    height: 10vh;
+    display: inline-block;
+    overflow: hidden;
+}
+
+
+.userSaleProductName
+{
+    width: 45%;
+    height: 10vh;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.userSaleProductImg
+{
+    width: 5%;
+    height: 10vh;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.userSaleProductImg img
+{
+    padding-top: 1vh;
+    max-height: 9vh;
+    max-width: 100%;
+}
+
+.userSaleProductCost
+{
+    width: 10%;
+    height: 10vh;
+    display: inline-block;
+    overflow: hidden;
+}
