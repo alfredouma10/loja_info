@@ -21,7 +21,7 @@
         @endisset
 
         <h1>Nome do Produto</h1>
-        <input id="name" name="name" type="text" placeholder="Nome do Produto" value="{{ old('name') !== null ? old('name'] : (isset($produto) ? $produto->Name : '') }}">
+        <input id="name" name="name" type="text" placeholder="Nome do Produto" value="{{ old('name') !== null ? old('name') : (isset($produto) ? $produto->Name : '') }}">
 
         <h1>Descrição</h1>
         <input id="desc" name="desc" type="text" placeholder="Descrição do Produto" value="{{ old('desc') !== null ? old('desc') : (isset($produto) ? $produto->Description : '') }}">
